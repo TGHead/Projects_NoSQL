@@ -79,6 +79,8 @@ C'est le resultat de requête de select dessus:
 | 70B3D580A0100594 |    45.43731   |     4.3797   | 2018-02-06 18:11:52.000000+0000 |    0.35    |     0.5625    |
 | 70B3D580A0100594 |    45.43731   |     4.3797   | 2018-02-06 19:47:52.000000+0000 |    0.38    |    -1.5225    |
 
+![Select_1](./img/select_1.png)
+
 ```CQL
 # Sélection des toutes les données de la station '70B3D580A010055B' durant 17h et 19h de 08/02/2018
 SELECT * FROM meteo WHERE stationID = '70B3D580A010055B' AND longitude = 45.43633979279548 AND latitude = 4.377930471673608 AND horodate > '2018-02-06 17:00:00' AND horodate < '2018-02-06 19:00:00';
@@ -91,3 +93,5 @@ C'est le resultat de requête de select dessus:
 |    stationID     |   longitude   |    latitude   |             horodate            |  humidite  | temperature |
 | ---------------- | ------------- | ------------- | ------------------------------- | ---------- | ----------- |
 | 70B3D580A010055B |    45.43634   |     4.37793   | 2018-02-06 17:53:52.000000+0000 |    0.38    |    9.625    |
+
+![Select_2](./img/select_2.png)
