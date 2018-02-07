@@ -2,7 +2,7 @@
 [TSE-FISE3-OPT-INFO2] les projets de module NoSQL
 
 ## 4 parties:
-* **MongoDB**
-* **Redis**
+* **MongoDB**(./mongoDB/README.md)
+* **Redis**(./redis/README.md)
 * [**Neo4j**](./neo4j/README.md)
 * [**Cassandra**](./cassandra/README.md)
