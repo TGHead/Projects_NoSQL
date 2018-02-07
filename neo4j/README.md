@@ -39,3 +39,24 @@ Exprimer des requêtes de suggestions de relations
 
 
 ## Scripts Neo4j
+
+### Structure de données
+
+#### Nœud (Entreprise et Utilisateur)
+```CQL
+# Nœud d'entreprise
+(e_x:Entreprise {nom: "nom d'entreprise", secteur: "secteur d’activité", description: "description d'entreprise", taille: effectif})
+
+# Nœud d'utilisateur
+(u_x:Utilisateur {nom: "nom d'utilisateur", prenom: "prenom d'utilisateur", description: "description d'utilisateur", liste_competence: "competence1 competence2 ..."})
+```
+
+#### Relation
+```CQL
+# Relation parmi des entreprises et utilisateurs
+-[r_eu_x:Travailler_Pour {pendant: ["du xx/xx/xx au xx/xx/xx"], titre: ["titre d'utilisateur dans l'entreprese"]}]->
+
+# Relation parmi des utilisateurs
+-[r_uu_x:Travailler_Avec]->
+-[r_uu_x:Connait]->
+```
