@@ -133,4 +133,4 @@ MATCH (u)-[r]->() MATCH ({nom:"GIRODON"})-[R:Travailler_Pour]->({nom:"Télécom 
 MATCH (u) WHERE (u)-[:Connait]->({nom: "GIRODON"}) RETURN u;
 ```
 ![requête_relation1](./img/requête_relation1.png)
-![requête_relation2](./img/requête_relation1.png)
+![requête_relation2](./img/requête_relation2.png)
