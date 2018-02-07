@@ -70,6 +70,7 @@ CREATE(e_1:Entreprise {nom: "Telenav Xian", secteur: "IT", description: "une ent
 
 CREATE(e_2:Entreprise {nom: "Télécom Saint-Etienne", secteur: "Education", description: "une école d'ingénieur des nouvelles technologies", taille: 120});
 ```
+![neo4j_create_nodes_entreprise_1](./img/neo4j_create_nodes_entreprise_1.png)
 
 ```CQL
 # Creer 2 nœuds d'utilisateur
@@ -79,6 +80,7 @@ CREATE(u_1:Utilisateur {nom: "LAUNAY", prenom: "Nicolas", description: "un élè
 
 CREATE(u_2:Utilisateur {nom: "GIRODON", prenom: "Remy", description: "l'enseignant de NoSQL", liste_competence: "MongoDB Redis Neo4j Cassandra"});
 ```
+![neo4j_create_nodes_user_1](./img/neo4j_create_nodes_user_1.png)
 
 ```CQL
 # Creer les relations parmi des entreprises et utilisateurs
@@ -88,6 +90,7 @@ MATCH(u:Utilisateur{nom:"ZHAN", prenom:"Haoming"}) MATCH(e:Entreprise{nom:"Telen
 
 MATCH(u:Utilisateur{nom:"GIRODON", prenom:"Remy"}) MATCH(e:Entreprise{nom:"Télécom Saint-Etienne"}) CREATE (u)-[r_eu_x:Travailler_Pour {pendant: ["du 01/09/17 au 16/02/18"], titre: ["enseignant"]}]->(e);
 ```
+![neo4j_create_relations_eu_1](./img/neo4j_create_relations_eu_1.png)
 
 ```CQL
 # Creer les relations parmi des utilisateurs (« Connait »):
@@ -98,6 +101,7 @@ MATCH(u0:Utilisateur{nom:"ZHAN", prenom:"Haoming"}) MATCH(u1:Utilisateur{nom:"GI
 # Creer les relations parmi des utilisateurs (« Travailler_Avec »):
 MATCH(u0:Utilisateur{nom:"ZHAN", prenom:"Haoming"}) MATCH(u1:Utilisateur{nom:"LAUNAY", prenom:"Nicolas"}) CREATE (u0)-[r_uu_x:Travailler_Avec]->(u1);
 ```
+![neo4j_create_relations_uu_1](./img/neo4j_create_relations_uu_1.png)
 
 ### Mettre en place le nécessaire pour des requêtes de recherche
 ```CQL
@@ -128,3 +132,5 @@ MATCH (u)-[r]->() MATCH ({nom:"GIRODON"})-[R:Travailler_Pour]->({nom:"Télécom 
 # Utilisateurs connus par les connaissances d’un utilisateur donné
 MATCH (u) WHERE (u)-[:Connait]->({nom: "GIRODON"}) RETURN u;
 ```
+![requête_relation1](./img/requête_relation1.png)
+![requête_relation2](./img/requête_relation1.png)
